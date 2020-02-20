@@ -23,3 +23,29 @@ function readNumber() {
 }
 
 console.log(readNumber());
+
+// --- RANDOM NUMBERS WITHIN A RANGE
+
+function random(min, max) {
+    return min + Math.random() * (max - min);
+}
+
+// In case of random integer generation, we need to add proper edge values to both end limits.
+// This is required because with Math.round, the randomness of the numbers generated is severely
+// decreased. To ensure uniform distribution across generated values, we add 0.5 to either end limit.
+
+// Ideally, the limits should be: MIN - 0.5 and MAX + 0.5
+
+function randomInteger(min, max) {
+    return Math.round(min - 0.5 + Math.random() * (max + 0.5 - min + 0.5));
+}
+
+alert( random(2, 7) );
+alert( random(2, 7) );
+alert( random(2, 7) );
+alert( random(2, 7) );
+
+alert( randomInteger(3, 9) );
+alert( randomInteger(3, 9) );
+alert( randomInteger(3, 9) );
+alert( randomInteger(3, 9) );
