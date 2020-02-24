@@ -1,5 +1,4 @@
 // initialize new array
-
 var friends = ["Mrinmoy", "Atanu", "Sisir"];                           // common way
 var randomIntegers = new Array(2020, 2200, 2208, 2209, 2650);         // another way.
 
