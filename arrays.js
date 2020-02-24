@@ -29,3 +29,8 @@ console.log(mixedDataTypes.indexOf(true));
 
 console.log( friends.indexOf("Mrinmoy") === -1 ? "Mrinmoy is NOT a friend." : "Mrinmoy is a friend." );
 console.log( friends.indexOf("Mrinmoy - Heavy") !== -1 ? "Mrinmoy - Heavy is a friend." : "Meh" );
+
+console.log("Reverse printing the friends array...");
+for(i = friends.length - 1; i>=0; i--) {
+    console.log(friends[i]);
+}
