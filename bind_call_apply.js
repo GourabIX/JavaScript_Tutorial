@@ -39,3 +39,35 @@ mrinmoyCasual("afternoon");
 
 var mrinmoyHeavy = gourab.presentation.bind(mrinmoy, "heavy");
 mrinmoyHeavy("morning");
+
+// Another example for bind using something similar to code in first_class_functions.js
+
+var years = [2002, 1996, 1995, 1999, 1992, 2007, 1994, 2015];
+
+function arrayCalc(array, fn) {
+  var arrayRes = [];
+  for (var i = 0; i < array.length; i++) {
+    arrayRes.push(fn(array[i]));
+  }
+  return arrayRes;
+}
+
+function calculateAge(yearOfBirth) {
+  return 2020 - yearOfBirth;
+}
+
+function isAdult(adultAge, age) {
+  return age >= adultAge;
+}
+
+var ages = arrayCalc(years, calculateAge);
+console.log(ages);
+
+var adultPeopleIN = arrayCalc(ages, isAdult.bind(this, 18));
+console.log(adultPeopleIN);
+
+var adultPeopleJP = arrayCalc(ages, isAdult.bind(this, 20));
+console.log(adultPeopleJP);
+
+var adultPeopleUK = arrayCalc(ages, isAdult.bind(this, 16));
+console.log(adultPeopleUK);
